@@ -1,4 +1,4 @@
-const verifyRequiredField = (req, res, next) => {
+const verifyRequiredFieldCompany = (req, res, next) => {
     const { nome, cnpj, segmento, senha } = req.body;
 
     if (
@@ -16,4 +16,4 @@ const verifyRequiredField = (req, res, next) => {
     next();
 }
 
-export default verifyRequiredField;
+export default verifyRequiredFieldCompany;

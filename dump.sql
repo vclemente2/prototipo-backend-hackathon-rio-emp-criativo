@@ -1,5 +1,5 @@
-drop table if exists companies;
 drop table if exists events;
+drop table if exists companies;
 
 create table companies (
   id serial primary key,
@@ -15,7 +15,7 @@ create table companies (
    nome text not null,
    preco integer not null,
    data date not null,
-   hora timetz not null,
+   hora time not null,
    publico text not null,
    cep text not null,
    logradouro text not null,
@@ -23,5 +23,5 @@ create table companies (
    complemento text,
    bairro text not null,
    cidade text not null,
-   estado text not null
-);   
+   estado varchar(2) not null
+);
