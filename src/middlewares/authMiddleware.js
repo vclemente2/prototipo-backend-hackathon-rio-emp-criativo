@@ -4,7 +4,7 @@ import connection from '../config/database.js';
 const authCompany = async (req, res, next) => {
     const { authorization } = req.headers;
 
-    const tokenArr = authorization.split(' ');
+    const tokenArr = authorization.split(' ') || null;
     const token = tokenArr[0];
 
     if (!token) {
