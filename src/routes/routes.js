@@ -23,9 +23,9 @@ routes.use(authCompany);
 
 routes.post('/event', verifyRequiredFieldEvent, createEvent)
 
-routes.get('/event', () => { });
-routes.put('/event', () => { });
-routes.delete('/event', () => { });
+// routes.get('/event', () => { });
+// routes.put('/event', () => { });
+// routes.delete('/event', () => { });
 
 
 export default routes;
