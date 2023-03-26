@@ -4,7 +4,8 @@ import connection from '../config/database.js';
 const authCompany = async (req, res, next) => {
     const { authorization } = req.headers;
 
-    const token = authorization.split(' ')[1];
+    const tokenArr = authorization.split(' ');
+    const token = tokenArr[0];
 
     if (!token) {
         return res.status(401).json({ message: 'An authentication token is required to access this feature.' });
