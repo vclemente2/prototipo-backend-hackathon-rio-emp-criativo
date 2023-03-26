@@ -3,16 +3,16 @@ import connection from '../config/database.js';
 
 const authCompany = async (req, res, next) => {
     const { authorization } = req.headers;
-    console.log(authorization)
+
     if (!authorization) {
         return res.status(401).json({ message: 'An authentication token is required to access this feature.' });
     }
-    console.log('passou aqui')
+
     try {
-        const token = authorization.split(' ')[0];
-        console.log(token);
+        const token = authorization.split(' ')[1];
+
         const { id } = jwt.verify(token, process.env.JWT_PASS);
-        console.log(id);
+
         const company = await connection('companies').select(['id', 'nome', 'cnpj', 'segmento']).where({ id }).first();
 
         req.user = company;
