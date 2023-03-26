@@ -7,7 +7,7 @@ const authCompany = async (req, res, next) => {
     if (!authorization) {
         return res.status(401).json({ message: 'An authentication token is required to access this feature.' });
     }
-
+    console.log('passou aqui')
     try {
         const token = authorization.split(' ')[0];
 
