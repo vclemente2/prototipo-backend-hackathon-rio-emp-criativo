@@ -10,9 +10,9 @@ const authCompany = async (req, res, next) => {
     console.log('passou aqui')
     try {
         const token = authorization.split(' ')[0];
-
+        console.log(token);
         const { id } = jwt.verify(token, process.env.JWT_PASS);
-
+        console.log(id);
         const company = await connection('companies').select(['id', 'nome', 'cnpj', 'segmento']).where({ id }).first();
 
         req.user = company;
